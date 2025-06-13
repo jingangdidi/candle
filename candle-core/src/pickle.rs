@@ -706,6 +706,7 @@ pub fn read_pth_tensor_info<P: AsRef<std::path::Path>>(
                 },
                 _ => continue,
             },
+            Object::Dict(key_values) => key_values[0].1.to_owned(), // srx add this line
             obj => obj,
         };
 
